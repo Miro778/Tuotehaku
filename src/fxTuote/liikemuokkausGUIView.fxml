@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="244.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxTuote.LiikeMuokkausGUIController">
+   <children>
+      <AnchorPane prefHeight="51.0" prefWidth="244.0">
+         <children>
+            <Label layoutX="78.0" layoutY="11.0" prefHeight="29.0" prefWidth="141.0" text="Syötä tiedot">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox prefHeight="241.0" prefWidth="244.0">
+         <children>
+            <AnchorPane prefHeight="24.0" prefWidth="244.0">
+               <children>
+                  <Label layoutX="18.0" prefHeight="39.0" prefWidth="95.0" text="Kaupan nimi:" />
+                  <TextField fx:id="kauppaNimi" layoutX="88.0" layoutY="7.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="21.0" prefWidth="244.0">
+               <children>
+                  <Label layoutX="50.0" layoutY="5.0" text="Tyyppi:" />
+                  <TextField fx:id="kauppaTyyppi" layoutX="88.0" layoutY="2.0" />
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="174.0" prefWidth="244.0">
+               <children>
+                  <AnchorPane prefHeight="12.0" prefWidth="244.0">
+                     <children>
+                        <Label layoutX="50.0" layoutY="15.0" text="Osoite:" />
+                        <TextField fx:id="kauppaOsoite" layoutX="88.0" layoutY="11.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="21.0" prefWidth="244.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="12.0" text="Verkkosivut:" />
+                        <TextField fx:id="kauppaSivut" layoutX="89.0" layoutY="8.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="112.0" prefWidth="244.0">
+                     <children>
+                        <Label layoutX="31.0" layoutY="15.0" text="Arvostelut:" />
+                        <TextField fx:id="kauppaArvostelut" layoutX="88.0" layoutY="11.0" prefHeight="25.0" prefWidth="48.0" />
+                        <Button fx:id="ok" layoutX="53.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleOK" prefHeight="25.0" prefWidth="48.0" text="OK" />
+                        <Button fx:id="peruuta" layoutX="139.0" layoutY="65.0" mnemonicParsing="false" onAction="#handlePeruuta" prefHeight="25.0" prefWidth="65.0" text="Peruuta" />
+                        <Label layoutX="143.0" layoutY="11.0" prefHeight="25.0" prefWidth="57.0" text="/ 5" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

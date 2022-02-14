@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import fi.jyu.mit.fxgui.ListChooser?>
+<?import fi.jyu.mit.fxgui.StringGrid?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="tausta" prefHeight="308.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxTuote.ValikoimaGUIController">
+   <top>
+      <MenuBar BorderPane.alignment="TOP_LEFT">
+        <menus>
+          <Menu mnemonicParsing="false" text="Tiedosto">
+            <items>
+              <MenuItem fx:id="tallenna" mnemonicParsing="false" onAction="#handleTallenna" text="Tallenna" />
+                  <MenuItem fx:id="lopeta" mnemonicParsing="false" onAction="#handleLopeta" text="Lopeta" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Muokkaa">
+            <items>
+              <MenuItem fx:id="uusiTuote" mnemonicParsing="false" onAction="#handleUusiTuote" text="Lisää uusi tuote" />
+                  <MenuItem fx:id="poistaTuote" mnemonicParsing="false" onAction="#handlePoistaTuote" text="Poista tuote" />
+                  <MenuItem fx:id="muokkaaTuotetta" mnemonicParsing="false" onAction="#handleMuokkaaTuotetta" text="Muokkaa tuotteen tietoja" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Apua">
+            <items>
+              <MenuItem fx:id="apua" mnemonicParsing="false" onAction="#handleApua" text="Apua" />
+                  <MenuItem fx:id="Tietoa" mnemonicParsing="false" onAction="#handleTietoa" text="Tietoa" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="273.0" prefWidth="272.0" style="-fx-background-color: gainsboro;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="kaupanNimi" text="XXL" textFill="#24c90e">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Corbel Bold" size="20.0" />
+               </font>
+            </Label>
+            <SplitPane dividerPositions="0.6481481481481481" prefHeight="28.0" prefWidth="272.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="188.0">
+                     <children>
+                        <TextField fx:id="hakuKentta" onAction="#handleHaeTuotetta" prefHeight="25.0" prefWidth="173.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="72.0">
+                     <children>
+                        <ChoiceBox fx:id="lajitteluValinta" layoutX="1.0" layoutY="1.0" onAction="#lajitteleLista" prefHeight="25.0" prefWidth="90.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="211.0" prefWidth="272.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="257.0">
+                     <children>
+                        <ListView id="tuoteLista1" prefHeight="203.0" prefWidth="267.0" />
+                        <ListChooser fx:id="tuoteLista" layoutY="2.0" onMouseClicked="#valitseValikoimasta" prefHeight="206.0" prefWidth="268.0" rivit="" />
+                     </children></AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <StringGrid fx:id="tuoteTiedot" prefHeight="283.0" prefWidth="307.0" rivit="Tiedot&#10;Tuote:&#10;Hinta:&#10;Arvostelut:">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy></StringGrid>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
